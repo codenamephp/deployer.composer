@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/codenamephp/deployer.composer/tree/2.0.1) (2022-02-06)
+
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/2.0.0...2.0.1)
+
+**Fixed bugs:**
+
+- Fixed typo [\#3](https://github.com/codenamephp/deployer.composer/pull/3) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [2.0.0](https://github.com/codenamephp/deployer.composer/tree/2.0.0) (2022-02-06)
 
 [Full Changelog](https://github.com/codenamephp/deployer.composer/compare/1.0.0...2.0.0)
