@@ -7,7 +7,7 @@ namespace de\codenamephp\deployer\composer\task\install;
  */
 final class Development extends AbstractInstallTask {
 
-  public const NAME = 'composer.isntall:development';
+  public const NAME = 'composer:install:development';
 
   public function getArguments() : array {
     return ['--prefer-dist'];
