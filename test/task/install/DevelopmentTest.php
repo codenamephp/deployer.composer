@@ -18,4 +18,12 @@ final class DevelopmentTest extends TestCase {
   public function testGetArguments() : void {
     self::assertEquals(['--prefer-dist'], $this->sut->getArguments());
   }
+
+  public function testGetName() : void {
+    self::assertSame(Development::NAME, $this->sut->getName());
+  }
+
+  public function testGetDescription() : void {
+    self::assertSame('Runs composer install with development dependencies.', $this->sut->getDescription());
+  }
 }
