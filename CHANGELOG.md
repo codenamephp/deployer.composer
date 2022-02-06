@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0](https://github.com/codenamephp/deployer.composer/tree/2.0.0) (2022-02-06)
+
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/1.0.0...2.0.0)
+
+**Merged pull requests:**
+
+- Made tasks compatible with registerTask\(\) [\#2](https://github.com/codenamephp/deployer.composer/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [1.0.0](https://github.com/codenamephp/deployer.composer/tree/1.0.0) (2022-02-06)
 
 [Full Changelog](https://github.com/codenamephp/deployer.composer/compare/b7421fddd1b790cc7c7f04d45d0a3ef5d3ac035e...1.0.0)
