@@ -32,6 +32,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/codenamephp/deployer.base" />
       <path value="$PROJECT_DIR$/vendor/codenamephp/deployer.command" />
+      <path value="$PROJECT_DIR$/vendor/fig/http-message-util" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
