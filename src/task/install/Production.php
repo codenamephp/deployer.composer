@@ -7,7 +7,17 @@ namespace de\codenamephp\deployer\composer\task\install;
  */
 final class Production extends AbstractInstallTask {
 
+  public const NAME = 'composer:install';
+
   public function getArguments() : array {
     return ['--prefer-dist', '--no-dev', '--optimize-autoloader'];
+  }
+
+  public function getDescription() : string {
+    return 'Runs composer with --no-dev flag so dev dependencies are not installed. Also optimizes autoloader.';
+  }
+
+  public function getName() : string {
+    return self::NAME;
   }
 }

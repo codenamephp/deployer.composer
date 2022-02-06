@@ -19,25 +19,29 @@ final class GenericTest extends TestCase {
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = new Generic('?', [], $commandFactory, $runner);
+    $this->sut = new Generic('?', [], '', '', $commandFactory, $runner);
   }
 
   public function test__construct() : void {
     $composerCommand = 'some command';
     $arguments = ['arg1', 'arg2'];
+    $taskName = 'some task name';
+    $taskDescription = 'some task description';
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = new Generic($composerCommand, $arguments, $commandFactory, $runner);
+    $this->sut = new Generic($composerCommand, $arguments, $taskName, $taskDescription, $commandFactory, $runner);
 
     self::assertEquals($composerCommand, $this->sut->getComposerCommand());
     self::assertEquals($arguments, $this->sut->getArguments());
+    self::assertSame($taskName, $this->sut->getName());
+    self::assertSame($taskDescription, $this->sut->getDescription());
     self::assertSame($commandFactory, $this->sut->commandFactory);
     self::assertSame($runner, $this->sut->runner);
   }
 
   public function test__construct_withoutOptionalParameters() : void {
-    $this->sut = new Generic('some command', ['arg1', 'arg2']);
+    $this->sut = new Generic('some command', ['arg1', 'arg2'], 'some task name');
 
     self::assertInstanceOf(WithBinaryFromDeployer::class, $this->sut->commandFactory);
     self::assertInstanceOf(WithDeployerFunctions::class, $this->sut->runner);
