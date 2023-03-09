@@ -12,11 +12,11 @@ final class DevelopmentTest extends TestCase {
   protected function setUp() : void {
     parent::setUp();
 
-    $this->sut = new Development();
+    $this->sut = new Development(withoutScripts: true);
   }
 
   public function testGetArguments() : void {
-    self::assertEquals(['--prefer-dist'], $this->sut->getArguments());
+    self::assertEquals(['--prefer-dist', '--no-scripts'], $this->sut->getArguments());
   }
 
   public function testGetName() : void {
