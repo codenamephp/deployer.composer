@@ -19,7 +19,7 @@ final class GenericTest extends TestCase {
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = new Generic('?', [], '', '', $commandFactory, $runner);
+    $this->sut = new Generic('?', [], '', '', false, $commandFactory, $runner);
   }
 
   public function test__construct() : void {
@@ -30,11 +30,12 @@ final class GenericTest extends TestCase {
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = new Generic($composerCommand, $arguments, $taskName, $taskDescription, $commandFactory, $runner);
+    $this->sut = new Generic($composerCommand, $arguments, $taskName, $taskDescription, true, $commandFactory, $runner);
 
     self::assertEquals($composerCommand, $this->sut->getComposerCommand());
-    self::assertEquals($arguments, $this->sut->getArguments());
+    self::assertEquals($arguments, $this->sut->arguments);
     self::assertSame($taskName, $this->sut->getName());
+    self::assertTrue($this->sut->withoutScripts);
     self::assertSame($taskDescription, $this->sut->getDescription());
     self::assertSame($commandFactory, $this->sut->commandFactory);
     self::assertSame($runner, $this->sut->runner);
@@ -45,5 +46,12 @@ final class GenericTest extends TestCase {
 
     self::assertInstanceOf(WithBinaryFromDeployer::class, $this->sut->commandFactory);
     self::assertInstanceOf(WithDeployerFunctions::class, $this->sut->runner);
+    self::assertFalse($this->sut->withoutScripts);
+  }
+
+  public function testGetArguments_canMergeWithParentArguments() : void {
+    $this->sut = new Generic('some command', ['arg1', 'arg2'], 'some task name', withoutScripts: true);
+
+    self::assertSame(['arg1', 'arg2', '--no-scripts'], $this->sut->getArguments());
   }
 }

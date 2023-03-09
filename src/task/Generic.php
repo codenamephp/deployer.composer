@@ -18,13 +18,14 @@ final class Generic extends AbstractComposerTask {
    * @param iComposerCommandFactory $commandFactory The factory to build the command
    * @param iRunner $runner The runner to run the command
    */
-  public function __construct(private string          $composerCommand,
-                              private array           $arguments,
-                              private string          $taskName,
-                              private string          $taskDescription = '',
+  public function __construct(public readonly string  $composerCommand,
+                              public readonly array   $arguments,
+                              public readonly string  $taskName,
+                              public readonly string  $taskDescription = '',
+                              bool                    $withoutScripts = false,
                               iComposerCommandFactory $commandFactory = new WithBinaryFromDeployer(),
                               iRunner                 $runner = new WithDeployerFunctions()) {
-    parent::__construct($commandFactory, $runner);
+    parent::__construct($withoutScripts, $commandFactory, $runner);
   }
 
   public function getComposerCommand() : string {
@@ -32,7 +33,7 @@ final class Generic extends AbstractComposerTask {
   }
 
   public function getArguments() : array {
-    return $this->arguments;
+    return [...$this->arguments, ...parent::getArguments()];
   }
 
   public function getDescription() : string {
