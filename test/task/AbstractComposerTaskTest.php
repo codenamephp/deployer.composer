@@ -20,15 +20,16 @@ final class AbstractComposerTaskTest extends TestCase {
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [$commandFactory, $runner]);
+    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [false, $commandFactory, $runner]);
   }
 
   public function test__construct() : void {
     $commandFactory = $this->createMock(iComposerCommandFactory::class);
     $runner = $this->createMock(iRunner::class);
 
-    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [$commandFactory, $runner]);
+    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [true, $commandFactory, $runner]);
 
+    self::assertTrue($this->sut->withoutScripts);
     self::assertSame($commandFactory, $this->sut->commandFactory);
     self::assertSame($runner, $this->sut->runner);
   }
@@ -36,22 +37,33 @@ final class AbstractComposerTaskTest extends TestCase {
   public function test__construct_withoutParameters() : void {
     $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class);
 
+    self::assertFalse($this->sut->withoutScripts);
     self::assertInstanceOf(WithBinaryFromDeployer::class, $this->sut->commandFactory);
     self::assertInstanceOf(WithDeployerFunctions::class, $this->sut->runner);
   }
 
   public function test__invoke() : void {
-    $this->sut->expects(self::once())->method('getArguments')->willReturn(['arg1', 'arg2']);
     $this->sut->expects(self::once())->method('getComposerCommand')->willReturn('some command');
 
     $command = $this->createMock(iCommand::class);
 
     $this->sut->commandFactory = $this->createMock(iComposerCommandFactory::class);
-    $this->sut->commandFactory->expects(self::once())->method('build')->with('some command', ['arg1', 'arg2'])->willReturn($command);
+    $this->sut->commandFactory->expects(self::once())->method('build')->with('some command', [])->willReturn($command);
 
     $this->sut->runner = $this->createMock(iRunner::class);
     $this->sut->runner->expects(self::once())->method('run')->with($command);
 
     $this->sut->__invoke();
+  }
+
+  public function testGetArguments_withoutScripts() : void {
+    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [true, $this->createMock(iComposerCommandFactory::class), $this->createMock(iRunner::class)]);
+
+    self::assertSame(['--no-scripts'], $this->sut->getArguments());
+  }
+  public function testGetArguments() : void {
+    $this->sut = $this->getMockForAbstractClass(AbstractComposerTask::class, [false, $this->createMock(iComposerCommandFactory::class), $this->createMock(iRunner::class)]);
+
+    self::assertSame([], $this->sut->getArguments());
   }
 }
