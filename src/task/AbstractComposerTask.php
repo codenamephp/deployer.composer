@@ -14,7 +14,10 @@ use de\codenamephp\deployer\composer\command\factory\WithBinaryFromDeployer;
  */
 abstract class AbstractComposerTask implements iTaskWithName, iTaskWithDescription {
 
-  public function __construct(public iComposerCommandFactory $commandFactory = new WithBinaryFromDeployer(), public iRunner $runner = new WithDeployerFunctions()) { }
+  public function __construct(
+    public readonly bool           $withoutScripts = false,
+    public iComposerCommandFactory $commandFactory = new WithBinaryFromDeployer(),
+    public iRunner                 $runner = new WithDeployerFunctions()) {}
 
   /**
    * Gets the command for composer, e.g. install or update
@@ -30,7 +33,11 @@ abstract class AbstractComposerTask implements iTaskWithName, iTaskWithDescripti
    *
    * @return array<int,string>
    */
-  abstract public function getArguments() : array;
+  public function getArguments() : array {
+    return array_filter([
+      $this->withoutScripts ? '--no-scripts' : '',
+    ]);
+  }
 
   public function __invoke() : void {
     $this->runner->run($this->commandFactory->build($this->getComposerCommand(), $this->getArguments()));

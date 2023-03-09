@@ -4,13 +4,14 @@ namespace de\codenamephp\deployer\composer\task\install;
 
 /**
  * Runs install for production without dev and prefers stable versions. Also optimizes the autoloader
+ * @psalm-api
  */
 final class Production extends AbstractInstallTask {
 
   public const NAME = 'composer:install';
 
   public function getArguments() : array {
-    return ['--prefer-dist', '--no-dev', '--optimize-autoloader'];
+    return array_merge(['--prefer-dist', '--no-dev', '--optimize-autoloader'], parent::getArguments());
   }
 
   public function getDescription() : string {

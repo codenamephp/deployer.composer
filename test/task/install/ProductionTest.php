@@ -12,11 +12,11 @@ final class ProductionTest extends TestCase {
   protected function setUp() : void {
     parent::setUp();
 
-    $this->sut = new Production();
+    $this->sut = new Production(withoutScripts: true);
   }
 
   public function testGetArguments() : void {
-    self::assertEquals(['--prefer-dist', '--no-dev', '--optimize-autoloader'], $this->sut->getArguments());
+    self::assertEquals(['--prefer-dist', '--no-dev', '--optimize-autoloader', '--no-scripts'], $this->sut->getArguments());
   }
 
   public function testGetName() : void {
