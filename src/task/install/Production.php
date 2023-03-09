@@ -4,6 +4,7 @@ namespace de\codenamephp\deployer\composer\task\install;
 
 /**
  * Runs install for production without dev and prefers stable versions. Also optimizes the autoloader
+ * @psalm-api
  */
 final class Production extends AbstractInstallTask {
 

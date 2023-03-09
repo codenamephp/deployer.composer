@@ -9,6 +9,7 @@ use de\codenamephp\deployer\composer\command\factory\WithBinaryFromDeployer;
 
 /**
  * Generic task that can be used to run scripts on the fly
+ * @psalm-api
  */
 final class Generic extends AbstractComposerTask {
 

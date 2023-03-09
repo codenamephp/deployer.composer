@@ -4,6 +4,7 @@ namespace de\codenamephp\deployer\composer\task\install;
 
 /**
  * Installs packages while preferring dist versions
+ * @psalm-api
  */
 final class Development extends AbstractInstallTask {
 
