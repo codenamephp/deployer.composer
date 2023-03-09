@@ -11,7 +11,7 @@ final class Production extends AbstractInstallTask {
   public const NAME = 'composer:install';
 
   public function getArguments() : array {
-    return ['--prefer-dist', '--no-dev', '--optimize-autoloader', ...parent::getArguments()];
+    return array_merge(['--prefer-dist', '--no-dev', '--optimize-autoloader'], parent::getArguments());
   }
 
   public function getDescription() : string {

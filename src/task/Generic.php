@@ -34,7 +34,7 @@ final class Generic extends AbstractComposerTask {
   }
 
   public function getArguments() : array {
-    return [...$this->arguments, ...parent::getArguments()];
+    return array_merge($this->arguments, parent::getArguments());
   }
 
   public function getDescription() : string {
