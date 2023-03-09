@@ -1,11 +1,16 @@
 # Changelog
 
-## [2.0.3](https://github.com/codenamephp/deployer.composer/tree/2.0.3) (2022-12-15)
+## [3.0.0](https://github.com/codenamephp/deployer.composer/tree/3.0.0) (2023-03-09)
 
-[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/2.0.2...2.0.3)
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/2.0.2...3.0.0)
+
+**Closed issues:**
+
+- Add option to disable scripts [\#7](https://github.com/codenamephp/deployer.composer/issues/7)
 
 **Merged pull requests:**
 
+- Add withoutScripts option [\#8](https://github.com/codenamephp/deployer.composer/pull/8) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump webdevops/php-dev from 8.1 to 8.2 in /docker/application [\#6](https://github.com/codenamephp/deployer.composer/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.0.2](https://github.com/codenamephp/deployer.composer/tree/2.0.2) (2022-07-31)
