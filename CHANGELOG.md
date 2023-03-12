@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1](https://github.com/codenamephp/deployer.composer/tree/3.0.1) (2023-03-12)
+
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/3.0.0...3.0.1)
+
+**Merged pull requests:**
+
+- Workflow Versions [\#10](https://github.com/codenamephp/deployer.composer/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.0.0](https://github.com/codenamephp/deployer.composer/tree/3.0.0) (2023-03-09)
 
 [Full Changelog](https://github.com/codenamephp/deployer.composer/compare/2.0.2...3.0.0)
