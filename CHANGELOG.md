@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- PHPUnit10 [\#11](https://github.com/codenamephp/deployer.composer/pull/11) ([bastianschwarz](https://github.com/bastianschwarz))
 - Workflow Versions [\#10](https://github.com/codenamephp/deployer.composer/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
 - deployer.base V3 [\#9](https://github.com/codenamephp/deployer.composer/pull/9) ([bastianschwarz](https://github.com/bastianschwarz))
 
