@@ -7,6 +7,7 @@
 **Merged pull requests:**
 
 - Workflow Versions [\#10](https://github.com/codenamephp/deployer.composer/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+- deployer.base V3 [\#9](https://github.com/codenamephp/deployer.composer/pull/9) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.0.0](https://github.com/codenamephp/deployer.composer/tree/3.0.0) (2023-03-09)
 
