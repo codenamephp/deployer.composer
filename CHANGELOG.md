@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.0](https://github.com/codenamephp/deployer.composer/tree/3.1.0) (2024-01-18)
+
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/3.0.1...3.1.0)
+
+**Implemented enhancements:**
+
+- Bump webdevops/php-dev from 8.2 to 8.3 in /docker/application [\#12](https://github.com/codenamephp/deployer.composer/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [3.0.1](https://github.com/codenamephp/deployer.composer/tree/3.0.1) (2023-03-12)
 
 [Full Changelog](https://github.com/codenamephp/deployer.composer/compare/3.0.0...3.0.1)
