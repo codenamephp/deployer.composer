@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Update codenamephp/deployer.command requirement from ^1.0 to ^1.0 || ^2.0 [\#14](https://github.com/codenamephp/deployer.composer/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Drop PHP8.1 [\#13](https://github.com/codenamephp/deployer.composer/pull/13) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.1.0](https://github.com/codenamephp/deployer.composer/tree/3.1.0) (2024-01-18)
