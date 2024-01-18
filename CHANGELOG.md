@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.0](https://github.com/codenamephp/deployer.composer/tree/4.0.0) (2024-01-18)
+
+[Full Changelog](https://github.com/codenamephp/deployer.composer/compare/3.1.0...4.0.0)
+
+**Merged pull requests:**
+
+- Drop PHP8.1 [\#13](https://github.com/codenamephp/deployer.composer/pull/13) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.1.0](https://github.com/codenamephp/deployer.composer/tree/3.1.0) (2024-01-18)
 
 [Full Changelog](https://github.com/codenamephp/deployer.composer/compare/3.0.1...3.1.0)
